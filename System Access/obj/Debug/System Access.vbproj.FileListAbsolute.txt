@@ -1,0 +1,13 @@
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\bin\Debug\System Access.exe.config
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\bin\Debug\System Access.exe
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\bin\Debug\System Access.pdb
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\bin\Debug\System Access.xml
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Access.vbproj.AssemblyReference.cache
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System_Access.Form1.resources
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System_Access.Resources.resources
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System_Access.StuDashboard.resources
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Access.vbproj.GenerateResource.cache
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Access.vbproj.CoreCompileInputs.cache
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Access.exe
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Access.xml
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Access.pdb
