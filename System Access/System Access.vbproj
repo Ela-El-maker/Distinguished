@@ -108,10 +108,34 @@
     <Compile Include="PaymentInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Staff.Designer.vb">
+      <DependentUpon>Staff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffDashboard.Designer.vb">
+      <DependentUpon>StaffDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffProfile.Designer.vb">
+      <DependentUpon>StaffProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StuDashboard.Designer.vb">
       <DependentUpon>StuDashboard.vb</DependentUpon>
     </Compile>
     <Compile Include="StuDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentRegistration.Designer.vb">
+      <DependentUpon>StudentRegistration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRegistration.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -131,8 +155,20 @@
     <EmbeddedResource Include="PaymentInfo.resx">
       <DependentUpon>PaymentInfo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Staff.resx">
+      <DependentUpon>Staff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffDashboard.resx">
+      <DependentUpon>StaffDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffProfile.resx">
+      <DependentUpon>StaffProfile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StuDashboard.resx">
       <DependentUpon>StuDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentRegistration.resx">
+      <DependentUpon>StudentRegistration.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

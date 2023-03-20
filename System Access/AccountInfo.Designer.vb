@@ -23,6 +23,7 @@ Partial Class AccountInfo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -33,13 +34,26 @@ Partial Class AccountInfo
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Turquoise
+        Me.Panel1.Controls.Add(Me.TextBox4)
+        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.TextBox6)
+        Me.Panel1.Controls.Add(Me.TextBox5)
+        Me.Panel1.Controls.Add(Me.TextBox3)
+        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
@@ -53,10 +67,19 @@ Partial Class AccountInfo
         Me.Panel1.Size = New System.Drawing.Size(649, 498)
         Me.Panel1.TabIndex = 16
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(25, 373)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(188, 25)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Hostel Housing :"
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(25, 211)
+        Me.Label7.Location = New System.Drawing.Point(25, 216)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(166, 25)
         Me.Label7.TabIndex = 5
@@ -65,7 +88,7 @@ Partial Class AccountInfo
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(25, 157)
+        Me.Label6.Location = New System.Drawing.Point(25, 164)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(177, 25)
         Me.Label6.TabIndex = 6
@@ -74,7 +97,7 @@ Partial Class AccountInfo
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(25, 311)
+        Me.Label4.Location = New System.Drawing.Point(25, 321)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(210, 25)
         Me.Label4.TabIndex = 5
@@ -83,7 +106,7 @@ Partial Class AccountInfo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(25, 261)
+        Me.Label5.Location = New System.Drawing.Point(25, 266)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(188, 25)
         Me.Label5.TabIndex = 4
@@ -92,7 +115,7 @@ Partial Class AccountInfo
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(25, 110)
+        Me.Label3.Location = New System.Drawing.Point(25, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(188, 25)
         Me.Label3.TabIndex = 2
@@ -101,7 +124,7 @@ Partial Class AccountInfo
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 56)
+        Me.Label2.Location = New System.Drawing.Point(25, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(166, 25)
         Me.Label2.TabIndex = 1
@@ -143,14 +166,55 @@ Partial Class AccountInfo
         Me.Label13.TabIndex = 17
         Me.Label13.Text = "Account Information"
         '
-        'Label8
+        'ComboBox1
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(25, 351)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(188, 25)
-        Me.Label8.TabIndex = 10
-        Me.Label8.Text = "Hostel Housing :"
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(272, 208)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(245, 33)
+        Me.ComboBox1.TabIndex = 20
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(272, 316)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(247, 30)
+        Me.TextBox6.TabIndex = 19
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(272, 261)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(247, 30)
+        Me.TextBox5.TabIndex = 18
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(272, 159)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(247, 30)
+        Me.TextBox3.TabIndex = 17
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(272, 110)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(247, 30)
+        Me.TextBox2.TabIndex = 16
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(272, 56)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(247, 30)
+        Me.TextBox1.TabIndex = 15
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(272, 368)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(247, 30)
+        Me.TextBox4.TabIndex = 21
         '
         'AccountInfo
         '
@@ -163,7 +227,7 @@ Partial Class AccountInfo
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label13)
         Me.Font = New System.Drawing.Font("Cascadia Code SemiBold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "AccountInfo"
         Me.Text = "AccountInfo"
         Me.Panel1.ResumeLayout(False)
@@ -185,4 +249,11 @@ Partial Class AccountInfo
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
 End Class

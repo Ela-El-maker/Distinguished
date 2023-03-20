@@ -11,3 +11,5 @@ C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Acces
 C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Access.exe
 C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Access.xml
 C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System Access.pdb
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System_Access.AccountInfo.resources
+C:\Users\feloe\Desktop\GitHub\Distinguished\System Access\obj\Debug\System_Access.PaymentInfo.resources

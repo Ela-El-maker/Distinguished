@@ -1,0 +1,15 @@
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\bin\Debug\CafeSystem.exe.config
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\bin\Debug\CafeSystem.exe
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\bin\Debug\CafeSystem.pdb
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\bin\Debug\CafeSystem.xml
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.vbproj.AssemblyReference.cache
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.Items.resources
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.Resources.resources
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.Orders.resources
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.vbproj.GenerateResource.cache
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.vbproj.CoreCompileInputs.cache
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.exe
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.xml
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.pdb
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.ViewOrders.resources
+C:\Users\feloe\Desktop\GitHub\Distinguished\CafeSystem\obj\Debug\CafeSystem.Login.resources
