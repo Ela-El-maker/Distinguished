@@ -65,7 +65,7 @@ Partial Class StaffProfile
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.Panel1.BackColor = System.Drawing.Color.SeaGreen
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)

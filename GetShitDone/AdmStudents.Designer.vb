@@ -22,16 +22,16 @@ Partial Class AdmStudents
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.studentsDGV = New System.Windows.Forms.DataGridView()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.txtAccount = New System.Windows.Forms.TextBox()
+        Me.txtContact = New System.Windows.Forms.TextBox()
+        Me.txtAdm = New System.Windows.Forms.TextBox()
+        Me.txtStudName = New System.Windows.Forms.TextBox()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -42,83 +42,83 @@ Partial Class AdmStudents
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.studentsDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button3
+        'btnDelete
         '
-        Me.Button3.Location = New System.Drawing.Point(290, 229)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(118, 36)
-        Me.Button3.TabIndex = 31
-        Me.Button3.Text = "Delete"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnDelete.Location = New System.Drawing.Point(290, 229)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(118, 36)
+        Me.btnDelete.TabIndex = 31
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'studentsDGV
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(472, 99)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(349, 309)
-        Me.DataGridView1.TabIndex = 36
+        Me.studentsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.studentsDGV.Location = New System.Drawing.Point(472, 99)
+        Me.studentsDGV.Name = "studentsDGV"
+        Me.studentsDGV.Size = New System.Drawing.Size(349, 309)
+        Me.studentsDGV.TabIndex = 36
         '
-        'TextBox5
+        'txtPassword
         '
-        Me.TextBox5.Location = New System.Drawing.Point(223, 172)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(184, 30)
-        Me.TextBox5.TabIndex = 29
+        Me.txtPassword.Location = New System.Drawing.Point(223, 172)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(184, 30)
+        Me.txtPassword.TabIndex = 29
         '
-        'TextBox4
+        'txtAccount
         '
-        Me.TextBox4.Location = New System.Drawing.Point(223, 132)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(184, 30)
-        Me.TextBox4.TabIndex = 28
+        Me.txtAccount.Location = New System.Drawing.Point(223, 132)
+        Me.txtAccount.Name = "txtAccount"
+        Me.txtAccount.Size = New System.Drawing.Size(184, 30)
+        Me.txtAccount.TabIndex = 28
         '
-        'TextBox3
+        'txtContact
         '
-        Me.TextBox3.Location = New System.Drawing.Point(223, 96)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(184, 30)
-        Me.TextBox3.TabIndex = 27
+        Me.txtContact.Location = New System.Drawing.Point(223, 96)
+        Me.txtContact.Name = "txtContact"
+        Me.txtContact.Size = New System.Drawing.Size(184, 30)
+        Me.txtContact.TabIndex = 27
         '
-        'TextBox2
+        'txtAdm
         '
-        Me.TextBox2.Location = New System.Drawing.Point(223, 58)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(184, 30)
-        Me.TextBox2.TabIndex = 26
+        Me.txtAdm.Location = New System.Drawing.Point(223, 58)
+        Me.txtAdm.Name = "txtAdm"
+        Me.txtAdm.Size = New System.Drawing.Size(184, 30)
+        Me.txtAdm.TabIndex = 26
         '
-        'TextBox1
+        'txtStudName
         '
-        Me.TextBox1.Location = New System.Drawing.Point(223, 22)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(184, 30)
-        Me.TextBox1.TabIndex = 25
+        Me.txtStudName.Location = New System.Drawing.Point(223, 22)
+        Me.txtStudName.Name = "txtStudName"
+        Me.txtStudName.Size = New System.Drawing.Size(184, 30)
+        Me.txtStudName.TabIndex = 25
         '
-        'Button2
+        'btnUpdate
         '
-        Me.Button2.Location = New System.Drawing.Point(157, 229)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(118, 36)
-        Me.Button2.TabIndex = 30
-        Me.Button2.Text = "Update"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnUpdate.Location = New System.Drawing.Point(157, 229)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(118, 36)
+        Me.btnUpdate.TabIndex = 30
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.TextBox5)
-        Me.Panel1.Controls.Add(Me.TextBox4)
-        Me.Panel1.Controls.Add(Me.TextBox3)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btnDelete)
+        Me.Panel1.Controls.Add(Me.btnUpdate)
+        Me.Panel1.Controls.Add(Me.txtPassword)
+        Me.Panel1.Controls.Add(Me.txtAccount)
+        Me.Panel1.Controls.Add(Me.txtContact)
+        Me.Panel1.Controls.Add(Me.txtAdm)
+        Me.Panel1.Controls.Add(Me.txtStudName)
+        Me.Panel1.Controls.Add(Me.btnAdd)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label6)
@@ -129,14 +129,14 @@ Partial Class AdmStudents
         Me.Panel1.Size = New System.Drawing.Size(436, 309)
         Me.Panel1.TabIndex = 34
         '
-        'Button1
+        'btnAdd
         '
-        Me.Button1.Location = New System.Drawing.Point(24, 229)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(118, 36)
-        Me.Button1.TabIndex = 24
-        Me.Button1.Text = "Add"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnAdd.Location = New System.Drawing.Point(24, 229)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(118, 36)
+        Me.btnAdd.TabIndex = 24
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -242,14 +242,14 @@ Partial Class AdmStudents
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(836, 420)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.studentsDGV)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Cascadia Code SemiBold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "AdmStudents"
         Me.Text = "AdmStaff"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.studentsDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -258,16 +258,16 @@ Partial Class AdmStudents
 
     End Sub
 
-    Friend WithEvents Button3 As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents studentsDGV As DataGridView
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents txtAccount As TextBox
+    Friend WithEvents txtContact As TextBox
+    Friend WithEvents txtAdm As TextBox
+    Friend WithEvents txtStudName As TextBox
+    Friend WithEvents btnUpdate As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAdd As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
