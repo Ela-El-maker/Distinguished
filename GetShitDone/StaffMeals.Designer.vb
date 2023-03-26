@@ -22,61 +22,61 @@ Partial Class StaffMeals
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.txtMeal = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.mealsDGV = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.dataTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.cbMealTime = New System.Windows.Forms.ComboBox()
         Me.Panel2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.mealsDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button3
+        'btnDelete
         '
-        Me.Button3.Location = New System.Drawing.Point(290, 229)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(118, 36)
-        Me.Button3.TabIndex = 31
-        Me.Button3.Text = "Delete"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnDelete.Location = New System.Drawing.Point(290, 229)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(118, 36)
+        Me.btnDelete.TabIndex = 31
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnUpdate
         '
-        Me.Button2.Location = New System.Drawing.Point(157, 229)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(118, 36)
-        Me.Button2.TabIndex = 30
-        Me.Button2.Text = "Update"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnUpdate.Location = New System.Drawing.Point(157, 229)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(118, 36)
+        Me.btnUpdate.TabIndex = 30
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'txtPrice
         '
-        Me.TextBox4.Location = New System.Drawing.Point(223, 176)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(184, 30)
-        Me.TextBox4.TabIndex = 28
+        Me.txtPrice.Location = New System.Drawing.Point(223, 176)
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(184, 30)
+        Me.txtPrice.TabIndex = 28
         '
-        'TextBox3
+        'txtMeal
         '
-        Me.TextBox3.Location = New System.Drawing.Point(224, 128)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(184, 30)
-        Me.TextBox3.TabIndex = 27
+        Me.txtMeal.Location = New System.Drawing.Point(224, 128)
+        Me.txtMeal.Name = "txtMeal"
+        Me.txtMeal.Size = New System.Drawing.Size(184, 30)
+        Me.txtMeal.TabIndex = 27
         '
         'Panel2
         '
@@ -141,14 +141,14 @@ Partial Class StaffMeals
         Me.Label10.TabIndex = 36
         Me.Label10.Text = "Manage Meals"
         '
-        'Button1
+        'btnAdd
         '
-        Me.Button1.Location = New System.Drawing.Point(24, 229)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(118, 36)
-        Me.Button1.TabIndex = 24
-        Me.Button1.Text = "Add"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnAdd.Location = New System.Drawing.Point(24, 229)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(118, 36)
+        Me.btnAdd.TabIndex = 24
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -186,24 +186,24 @@ Partial Class StaffMeals
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Date :"
         '
-        'DataGridView1
+        'mealsDGV
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(473, 97)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(349, 309)
-        Me.DataGridView1.TabIndex = 36
+        Me.mealsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.mealsDGV.Location = New System.Drawing.Point(473, 97)
+        Me.mealsDGV.Name = "mealsDGV"
+        Me.mealsDGV.Size = New System.Drawing.Size(349, 309)
+        Me.mealsDGV.TabIndex = 36
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.Panel1.Controls.Add(Me.DateTimePicker1)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.TextBox4)
-        Me.Panel1.Controls.Add(Me.TextBox3)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.dataTimePicker)
+        Me.Panel1.Controls.Add(Me.cbMealTime)
+        Me.Panel1.Controls.Add(Me.btnDelete)
+        Me.Panel1.Controls.Add(Me.btnUpdate)
+        Me.Panel1.Controls.Add(Me.txtPrice)
+        Me.Panel1.Controls.Add(Me.txtMeal)
+        Me.Panel1.Controls.Add(Me.btnAdd)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label7)
@@ -213,20 +213,21 @@ Partial Class StaffMeals
         Me.Panel1.Size = New System.Drawing.Size(436, 309)
         Me.Panel1.TabIndex = 34
         '
-        'DateTimePicker1
+        'dataTimePicker
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(223, 21)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(185, 30)
-        Me.DateTimePicker1.TabIndex = 33
+        Me.dataTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dataTimePicker.Location = New System.Drawing.Point(223, 21)
+        Me.dataTimePicker.Name = "dataTimePicker"
+        Me.dataTimePicker.Size = New System.Drawing.Size(185, 30)
+        Me.dataTimePicker.TabIndex = 33
         '
-        'ComboBox1
+        'cbMealTime
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(224, 72)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(184, 33)
-        Me.ComboBox1.TabIndex = 32
+        Me.cbMealTime.FormattingEnabled = True
+        Me.cbMealTime.Location = New System.Drawing.Point(224, 72)
+        Me.cbMealTime.Name = "cbMealTime"
+        Me.cbMealTime.Size = New System.Drawing.Size(184, 33)
+        Me.cbMealTime.TabIndex = 32
         '
         'StaffMeals
         '
@@ -234,7 +235,7 @@ Partial Class StaffMeals
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(839, 417)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.mealsDGV)
         Me.Controls.Add(Me.Panel1)
         Me.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Font = New System.Drawing.Font("Cascadia Code SemiBold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -243,30 +244,30 @@ Partial Class StaffMeals
         Me.Text = "StaffMeals"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.mealsDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnUpdate As Button
+    Friend WithEvents txtPrice As TextBox
+    Friend WithEvents txtMeal As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAdd As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents mealsDGV As DataGridView
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents dataTimePicker As DateTimePicker
+    Friend WithEvents cbMealTime As ComboBox
 End Class

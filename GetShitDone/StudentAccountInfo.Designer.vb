@@ -23,7 +23,7 @@ Partial Class StudentAccountInfo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.generateBtn = New System.Windows.Forms.Button()
+        Me.btnGenerate = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -33,45 +33,60 @@ Partial Class StudentAccountInfo
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.historyDGV = New System.Windows.Forms.DataGridView()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.txtAdm = New System.Windows.Forms.TextBox()
+        Me.txtStatus = New System.Windows.Forms.TextBox()
+        Me.txtMeal = New System.Windows.Forms.TextBox()
+        Me.cbMealTime = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.historyDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.Panel1.Controls.Add(Me.generateBtn)
+        Me.Panel1.Controls.Add(Me.cbMealTime)
+        Me.Panel1.Controls.Add(Me.txtMeal)
+        Me.Panel1.Controls.Add(Me.txtStatus)
+        Me.Panel1.Controls.Add(Me.txtAdm)
+        Me.Panel1.Controls.Add(Me.txtName)
+        Me.Panel1.Controls.Add(Me.btnGenerate)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Location = New System.Drawing.Point(219, 12)
+        Me.Panel1.Location = New System.Drawing.Point(11, 95)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(598, 390)
+        Me.Panel1.Size = New System.Drawing.Size(383, 307)
         Me.Panel1.TabIndex = 0
         '
-        'generateBtn
+        'btnGenerate
         '
-        Me.generateBtn.Location = New System.Drawing.Point(229, 319)
-        Me.generateBtn.Name = "generateBtn"
-        Me.generateBtn.Size = New System.Drawing.Size(172, 41)
-        Me.generateBtn.TabIndex = 9
-        Me.generateBtn.Text = "Generate"
-        Me.generateBtn.UseVisualStyleBackColor = True
+        Me.btnGenerate.Location = New System.Drawing.Point(118, 243)
+        Me.btnGenerate.Name = "btnGenerate"
+        Me.btnGenerate.Size = New System.Drawing.Size(172, 41)
+        Me.btnGenerate.TabIndex = 9
+        Me.btnGenerate.Text = "Generate"
+        Me.btnGenerate.UseVisualStyleBackColor = True
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(30, 240)
+        Me.Label10.Location = New System.Drawing.Point(12, 187)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(177, 25)
+        Me.Label10.Size = New System.Drawing.Size(78, 25)
         Me.Label10.TabIndex = 8
-        Me.Label10.Text = "Meal Selected :"
+        Me.Label10.Text = "Meal :"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(30, 179)
+        Me.Label9.Location = New System.Drawing.Point(12, 144)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(122, 25)
         Me.Label9.TabIndex = 7
@@ -80,7 +95,7 @@ Partial Class StudentAccountInfo
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(30, 132)
+        Me.Label7.Location = New System.Drawing.Point(12, 104)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(100, 25)
         Me.Label7.TabIndex = 5
@@ -89,7 +104,7 @@ Partial Class StudentAccountInfo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(30, 89)
+        Me.Label5.Location = New System.Drawing.Point(12, 62)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(89, 25)
         Me.Label5.TabIndex = 3
@@ -98,7 +113,7 @@ Partial Class StudentAccountInfo
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(30, 38)
+        Me.Label4.Location = New System.Drawing.Point(12, 15)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 25)
         Me.Label4.TabIndex = 2
@@ -108,7 +123,7 @@ Partial Class StudentAccountInfo
         '
         Me.Label1.AutoSize = True
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label1.Location = New System.Drawing.Point(12, 101)
+        Me.Label1.Location = New System.Drawing.Point(30, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(89, 25)
         Me.Label1.TabIndex = 1
@@ -118,7 +133,7 @@ Partial Class StudentAccountInfo
         '
         Me.Label2.AutoSize = True
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label2.Location = New System.Drawing.Point(12, 174)
+        Me.Label2.Location = New System.Drawing.Point(201, 14)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(166, 25)
         Me.Label2.TabIndex = 2
@@ -128,7 +143,7 @@ Partial Class StudentAccountInfo
         '
         Me.Label3.AutoSize = True
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label3.Location = New System.Drawing.Point(12, 252)
+        Me.Label3.Location = New System.Drawing.Point(422, 14)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(166, 25)
         Me.Label3.TabIndex = 3
@@ -137,22 +152,88 @@ Partial Class StudentAccountInfo
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(12, 377)
+        Me.LinkLabel1.Location = New System.Drawing.Point(673, 14)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(89, 25)
         Me.LinkLabel1.TabIndex = 5
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Log Out"
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.MediumSpringGreen
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.LinkLabel1)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Location = New System.Drawing.Point(11, 22)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(806, 56)
+        Me.Panel2.TabIndex = 34
+        '
+        'historyDGV
+        '
+        Me.historyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.historyDGV.Location = New System.Drawing.Point(400, 123)
+        Me.historyDGV.Name = "historyDGV"
+        Me.historyDGV.Size = New System.Drawing.Size(417, 279)
+        Me.historyDGV.TabIndex = 35
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label6.Font = New System.Drawing.Font("Cascadia Code SemiBold", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(584, 95)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(89, 25)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "History"
+        '
+        'txtName
+        '
+        Me.txtName.Location = New System.Drawing.Point(130, 15)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(237, 30)
+        Me.txtName.TabIndex = 10
+        '
+        'txtAdm
+        '
+        Me.txtAdm.Location = New System.Drawing.Point(130, 62)
+        Me.txtAdm.Name = "txtAdm"
+        Me.txtAdm.Size = New System.Drawing.Size(237, 30)
+        Me.txtAdm.TabIndex = 11
+        '
+        'txtStatus
+        '
+        Me.txtStatus.Location = New System.Drawing.Point(130, 109)
+        Me.txtStatus.Name = "txtStatus"
+        Me.txtStatus.Size = New System.Drawing.Size(237, 30)
+        Me.txtStatus.TabIndex = 12
+        '
+        'txtMeal
+        '
+        Me.txtMeal.Location = New System.Drawing.Point(130, 192)
+        Me.txtMeal.Name = "txtMeal"
+        Me.txtMeal.Size = New System.Drawing.Size(237, 30)
+        Me.txtMeal.TabIndex = 13
+        '
+        'cbMealTime
+        '
+        Me.cbMealTime.FormattingEnabled = True
+        Me.cbMealTime.Location = New System.Drawing.Point(140, 149)
+        Me.cbMealTime.Name = "cbMealTime"
+        Me.cbMealTime.Size = New System.Drawing.Size(227, 33)
+        Me.cbMealTime.TabIndex = 14
+        '
         'StudentAccountInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(829, 414)
-        Me.Controls.Add(Me.LinkLabel1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.historyDGV)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Cascadia Code SemiBold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -161,6 +242,9 @@ Partial Class StudentAccountInfo
         Me.Text = "Account Information"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.historyDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,10 +255,18 @@ Partial Class StudentAccountInfo
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents generateBtn As Button
+    Friend WithEvents btnGenerate As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents historyDGV As DataGridView
+    Friend WithEvents Label6 As Label
+    Friend WithEvents cbMealTime As ComboBox
+    Friend WithEvents txtMeal As TextBox
+    Friend WithEvents txtStatus As TextBox
+    Friend WithEvents txtAdm As TextBox
+    Friend WithEvents txtName As TextBox
 End Class
