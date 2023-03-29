@@ -22,4 +22,8 @@
         Obj.Show()
         Me.Hide()
     End Sub
+
+    Private Sub mealsDGV_SelectionChanged(sender As Object, e As EventArgs) Handles mealsDGV.SelectionChanged
+
+    End Sub
 End Class

@@ -27,6 +27,10 @@ Partial Class StudentMealSelection
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -36,10 +40,6 @@ Partial Class StudentMealSelection
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.mealsDGV = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.mealsDGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,6 +102,36 @@ Partial Class StudentMealSelection
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(347, 322)
         Me.Panel1.TabIndex = 11
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(143, 57)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(184, 30)
+        Me.DateTimePicker1.TabIndex = 23
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(143, 18)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(184, 33)
+        Me.ComboBox1.TabIndex = 22
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(143, 139)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(184, 30)
+        Me.TextBox4.TabIndex = 21
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(143, 96)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(184, 30)
+        Me.TextBox3.TabIndex = 20
         '
         'Button1
         '
@@ -187,36 +217,6 @@ Partial Class StudentMealSelection
         Me.Label9.Size = New System.Drawing.Size(177, 25)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Meals Available"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(143, 96)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(184, 30)
-        Me.TextBox3.TabIndex = 20
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(143, 139)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(184, 30)
-        Me.TextBox4.TabIndex = 21
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(143, 18)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(184, 33)
-        Me.ComboBox1.TabIndex = 22
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(143, 57)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(184, 30)
-        Me.DateTimePicker1.TabIndex = 23
         '
         'StudentMealSelection
         '

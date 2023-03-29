@@ -172,4 +172,8 @@ Public Class StaffMeals
             dataTimePicker.Value = CDate(selectedRow.Cells("Date").Value)
         End If
     End Sub
+
+    Private Sub mealsDGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles mealsDGV.CellContentClick
+
+    End Sub
 End Class
