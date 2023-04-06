@@ -9,6 +9,47 @@ Public Class AdmMeals
         adapter.Fill(table)
         mealsDGV.DataSource = table
     End Sub
+    ' Load data into cbStudent ComboBox
+
+
+    ' Get the current balance of a student
+    Private Function GetStudentBalance(studentId As Integer) As Decimal
+        Dim query As String = "SELECT Account FROM StudentTBL WHERE Id = @Id"
+
+        Dim conn As New SqlConnection(Connection)
+        Dim cmd As New SqlCommand(query, conn)
+
+        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = studentId
+
+        conn.Open()
+
+        Dim result = cmd.ExecuteScalar()
+
+        conn.Close()
+
+        If result Is Nothing OrElse IsDBNull(result) Then
+            Return 0
+        Else
+            Return CDec(result)
+        End If
+    End Function
+    ' Update the balance of a student
+    Private Sub UpdateStudentBalance(studentId As Integer, balance As Decimal)
+        Dim query As String = "UPDATE StudentTBL SET Account = @Account WHERE Id = @Id"
+
+        Dim conn As New SqlConnection(Connection)
+        Dim cmd As New SqlCommand(query, conn)
+
+        cmd.Parameters.Add("@Account", SqlDbType.Decimal).Value = balance
+        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = studentId
+
+        conn.Open()
+
+        cmd.ExecuteNonQuery()
+
+        conn.Close()
+    End Sub
+
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim Obj As New AdminLogin()
         Obj.Show()
@@ -43,7 +84,7 @@ Public Class AdmMeals
             Return
         End If
         'Get the values from the textboxes
-        Dim mealDate As String = dateTimePicker.Value
+        Dim mealDate As DateTime = dateTimePicker.Value
         Dim mealMeal As String = txtMeal.Text
         Dim mealPrice As Decimal = Decimal.Parse(txtPrice.Text)
         Dim mealMealTime As String = cbMealTime.Text
@@ -91,8 +132,23 @@ Public Class AdmMeals
         Dim mealPrice As Decimal = Decimal.Parse(txtPrice.Text)
         Dim mealMealTime As String = cbMealTime.Text
 
+        ' Get the selected student account balance
+        ' Dim selectedStudentId As Integer = Integer.Parse("@Id".SelectedValue)
+        'Dim selectedStudentBalance As Decimal = GetStudentBalance(selectedStudentId)
+
+
+        ' Check if the student has enough balance to purchase the meal
+        ' If selectedStudentBalance < mealPrice Then
+        MessageBox.Show("Selected student does not have enough balance to purchase this meal.")
+        '    Return
+        'End If
+
+        ' Deduct the meal price from the student's account balance
+        ' Dim updatedStudentBalance As Decimal = selectedStudentBalance - mealPrice
+        'UpdateStudentBalance(selectedStudentId, updatedStudentBalance)
+
         'Create a SQL query to insert the values into the database
-        Dim query As String = "INSERT INTO MealTBL (Date, MealTime, Meal, Price) VALUES (@Date, @MealTime, @Meal, @Price)"
+        Dim query As String = "INSERT INTO MealTBL (Date, MealTime, Meal, Price,Id) VALUES (@Date, @MealTime, @Meal, @Price,@Id)"
 
         Dim conn As New SqlConnection(Connection)
         Dim cmd As New SqlCommand(query, conn)
@@ -102,6 +158,7 @@ Public Class AdmMeals
         cmd.Parameters.Add("@MealTime", SqlDbType.NVarChar).Value = mealMealTime
         cmd.Parameters.Add("@Meal", SqlDbType.NVarChar).Value = mealMeal
         cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = mealPrice
+        ' cmd.Parameters.Add("@AdmNo", SqlDbType.Int).Value = selectedStudentId
 
         ' Open the database connection
         conn.Open()
@@ -155,6 +212,7 @@ Public Class AdmMeals
 
     Private Sub AdmMeals_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
+        cbMealTime.Items.AddRange({"Breakfast", "Lunch", "Supper"})
     End Sub
 
     Private Sub mealsDGV_SelectionChanged(sender As Object, e As EventArgs) Handles mealsDGV.SelectionChanged

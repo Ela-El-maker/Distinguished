@@ -39,9 +39,9 @@ Partial Class StudentAccountInfo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblWelcome = New System.Windows.Forms.Label()
         Me.historyDGV = New System.Windows.Forms.DataGridView()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.lblWelcome = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.historyDGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,35 +72,35 @@ Partial Class StudentAccountInfo
         Me.cbMealTime.Location = New System.Drawing.Point(140, 149)
         Me.cbMealTime.Name = "cbMealTime"
         Me.cbMealTime.Size = New System.Drawing.Size(227, 33)
-        Me.cbMealTime.TabIndex = 14
+        Me.cbMealTime.TabIndex = 3
         '
         'txtMeal
         '
         Me.txtMeal.Location = New System.Drawing.Point(130, 192)
         Me.txtMeal.Name = "txtMeal"
         Me.txtMeal.Size = New System.Drawing.Size(237, 30)
-        Me.txtMeal.TabIndex = 13
+        Me.txtMeal.TabIndex = 4
         '
         'txtStatus
         '
         Me.txtStatus.Location = New System.Drawing.Point(130, 109)
         Me.txtStatus.Name = "txtStatus"
         Me.txtStatus.Size = New System.Drawing.Size(237, 30)
-        Me.txtStatus.TabIndex = 12
+        Me.txtStatus.TabIndex = 2
         '
         'txtAdm
         '
         Me.txtAdm.Location = New System.Drawing.Point(130, 62)
         Me.txtAdm.Name = "txtAdm"
         Me.txtAdm.Size = New System.Drawing.Size(237, 30)
-        Me.txtAdm.TabIndex = 11
+        Me.txtAdm.TabIndex = 1
         '
         'txtName
         '
         Me.txtName.Location = New System.Drawing.Point(130, 15)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(237, 30)
-        Me.txtName.TabIndex = 10
+        Me.txtName.TabIndex = 0
         Me.txtName.Text = " "
         '
         'btnGenerate
@@ -108,7 +108,7 @@ Partial Class StudentAccountInfo
         Me.btnGenerate.Location = New System.Drawing.Point(118, 243)
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(172, 41)
-        Me.btnGenerate.TabIndex = 9
+        Me.btnGenerate.TabIndex = 5
         Me.btnGenerate.Text = "Generate"
         Me.btnGenerate.UseVisualStyleBackColor = True
         '
@@ -161,7 +161,7 @@ Partial Class StudentAccountInfo
         '
         Me.Label1.AutoSize = True
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label1.Location = New System.Drawing.Point(148, 14)
+        Me.Label1.Location = New System.Drawing.Point(201, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(89, 25)
         Me.Label1.TabIndex = 1
@@ -171,7 +171,7 @@ Partial Class StudentAccountInfo
         '
         Me.Label2.AutoSize = True
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label2.Location = New System.Drawing.Point(293, 14)
+        Me.Label2.Location = New System.Drawing.Point(314, 14)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(166, 25)
         Me.Label2.TabIndex = 2
@@ -210,6 +210,15 @@ Partial Class StudentAccountInfo
         Me.Panel2.Size = New System.Drawing.Size(806, 56)
         Me.Panel2.TabIndex = 34
         '
+        'lblWelcome
+        '
+        Me.lblWelcome.AutoSize = True
+        Me.lblWelcome.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblWelcome.Location = New System.Drawing.Point(23, 14)
+        Me.lblWelcome.Name = "lblWelcome"
+        Me.lblWelcome.Size = New System.Drawing.Size(0, 25)
+        Me.lblWelcome.TabIndex = 6
+        '
         'historyDGV
         '
         Me.historyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -229,23 +238,13 @@ Partial Class StudentAccountInfo
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "History"
         '
-        'lblWelcome
-        '
-        Me.lblWelcome.AutoSize = True
-        Me.lblWelcome.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblWelcome.Location = New System.Drawing.Point(23, 14)
-        Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(89, 25)
-        Me.lblWelcome.TabIndex = 6
-        Me.lblWelcome.Text = "Profile"
-        '
         'StudentAccountInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(829, 414)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.historyDGV)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Cascadia Code SemiBold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

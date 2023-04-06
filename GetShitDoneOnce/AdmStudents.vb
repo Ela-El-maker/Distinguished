@@ -9,6 +9,44 @@ Public Class AdmStudents
         adapter.Fill(table)
         studentsDGV.DataSource = table
     End Sub
+
+    ' Get the current balance of a student
+    Private Function GetStudentBalance(studentId As Integer) As Decimal
+        Dim query As String = "SELECT Account FROM StudentTBL WHERE Id = @Id"
+
+        Dim conn As New SqlConnection(Connection)
+        Dim cmd As New SqlCommand(query, conn)
+
+        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = studentId
+
+        conn.Open()
+
+        Dim result = cmd.ExecuteScalar()
+
+        conn.Close()
+
+        If result Is Nothing OrElse IsDBNull(result) Then
+            Return 0
+        Else
+            Return CDec(result)
+        End If
+    End Function
+    ' Update the balance of a student
+    Private Sub UpdateStudentBalance(studentId As Integer, balance As Decimal)
+        Dim query As String = "UPDATE StudentTBL SET Account = @Account WHERE Id = @Id"
+
+        Dim conn As New SqlConnection(Connection)
+        Dim cmd As New SqlCommand(query, conn)
+
+        cmd.Parameters.Add("@Account", SqlDbType.Decimal).Value = balance
+        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = studentId
+
+        conn.Open()
+
+        cmd.ExecuteNonQuery()
+
+        conn.Close()
+    End Sub
     Private Sub LinkLabel1_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim Obj As New AdminLogin()
         Obj.Show()

@@ -40,9 +40,14 @@ Partial Class StudentMealSelection
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.mealsDGV = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtAdmNo = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.mealSelectedDGV = New System.Windows.Forms.DataGridView()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.mealsDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.mealSelectedDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LinkLabel1
@@ -88,6 +93,8 @@ Partial Class StudentMealSelection
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.Panel1.Controls.Add(Me.txtAdmNo)
+        Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.dateTimePicker)
         Me.Panel1.Controls.Add(Me.cbMealTime)
         Me.Panel1.Controls.Add(Me.txtMeal)
@@ -106,7 +113,7 @@ Partial Class StudentMealSelection
         'dateTimePicker
         '
         Me.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateTimePicker.Location = New System.Drawing.Point(143, 57)
+        Me.dateTimePicker.Location = New System.Drawing.Point(143, 101)
         Me.dateTimePicker.Name = "dateTimePicker"
         Me.dateTimePicker.Size = New System.Drawing.Size(184, 30)
         Me.dateTimePicker.TabIndex = 23
@@ -114,28 +121,28 @@ Partial Class StudentMealSelection
         'cbMealTime
         '
         Me.cbMealTime.FormattingEnabled = True
-        Me.cbMealTime.Location = New System.Drawing.Point(143, 18)
+        Me.cbMealTime.Location = New System.Drawing.Point(143, 62)
         Me.cbMealTime.Name = "cbMealTime"
         Me.cbMealTime.Size = New System.Drawing.Size(184, 33)
         Me.cbMealTime.TabIndex = 22
         '
         'txtMeal
         '
-        Me.txtMeal.Location = New System.Drawing.Point(143, 139)
+        Me.txtMeal.Location = New System.Drawing.Point(143, 183)
         Me.txtMeal.Name = "txtMeal"
         Me.txtMeal.Size = New System.Drawing.Size(184, 30)
         Me.txtMeal.TabIndex = 21
         '
         'txtPrice
         '
-        Me.txtPrice.Location = New System.Drawing.Point(143, 96)
+        Me.txtPrice.Location = New System.Drawing.Point(143, 140)
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(184, 30)
         Me.txtPrice.TabIndex = 20
         '
         'btnSelect
         '
-        Me.btnSelect.Location = New System.Drawing.Point(153, 184)
+        Me.btnSelect.Location = New System.Drawing.Point(153, 228)
         Me.btnSelect.Name = "btnSelect"
         Me.btnSelect.Size = New System.Drawing.Size(157, 36)
         Me.btnSelect.TabIndex = 17
@@ -145,7 +152,7 @@ Partial Class StudentMealSelection
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(15, 141)
+        Me.Label8.Location = New System.Drawing.Point(15, 185)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(78, 25)
         Me.Label8.TabIndex = 16
@@ -154,7 +161,7 @@ Partial Class StudentMealSelection
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 255)
+        Me.Label7.Location = New System.Drawing.Point(15, 287)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(199, 25)
         Me.Label7.TabIndex = 15
@@ -163,7 +170,7 @@ Partial Class StudentMealSelection
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(15, 100)
+        Me.Label6.Location = New System.Drawing.Point(15, 144)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(89, 25)
         Me.Label6.TabIndex = 14
@@ -172,7 +179,7 @@ Partial Class StudentMealSelection
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(15, 62)
+        Me.Label5.Location = New System.Drawing.Point(15, 106)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(89, 25)
         Me.Label5.TabIndex = 13
@@ -181,7 +188,7 @@ Partial Class StudentMealSelection
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(15, 18)
+        Me.Label4.Location = New System.Drawing.Point(15, 62)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(122, 25)
         Me.Label4.TabIndex = 0
@@ -204,7 +211,7 @@ Partial Class StudentMealSelection
         Me.mealsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.mealsDGV.Location = New System.Drawing.Point(378, 111)
         Me.mealsDGV.Name = "mealsDGV"
-        Me.mealsDGV.Size = New System.Drawing.Size(446, 294)
+        Me.mealsDGV.Size = New System.Drawing.Size(446, 128)
         Me.mealsDGV.TabIndex = 36
         '
         'Label9
@@ -218,11 +225,48 @@ Partial Class StudentMealSelection
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Meals Available"
         '
+        'txtAdmNo
+        '
+        Me.txtAdmNo.Location = New System.Drawing.Point(143, 17)
+        Me.txtAdmNo.Name = "txtAdmNo"
+        Me.txtAdmNo.Size = New System.Drawing.Size(184, 30)
+        Me.txtAdmNo.TabIndex = 25
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(15, 19)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(100, 25)
+        Me.Label10.TabIndex = 24
+        Me.Label10.Text = "AdmNo.: "
+        '
+        'mealSelectedDGV
+        '
+        Me.mealSelectedDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.mealSelectedDGV.Location = New System.Drawing.Point(378, 266)
+        Me.mealSelectedDGV.Name = "mealSelectedDGV"
+        Me.mealSelectedDGV.Size = New System.Drawing.Size(446, 139)
+        Me.mealSelectedDGV.TabIndex = 37
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label11.Font = New System.Drawing.Font("Cascadia Code SemiBold", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(519, 238)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(166, 25)
+        Me.Label11.TabIndex = 38
+        Me.Label11.Text = "Meals Selected"
+        '
         'StudentMealSelection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(836, 417)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.mealSelectedDGV)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.mealsDGV)
         Me.Controls.Add(Me.Panel2)
@@ -237,6 +281,7 @@ Partial Class StudentMealSelection
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.mealsDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.mealSelectedDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -260,4 +305,8 @@ Partial Class StudentMealSelection
     Friend WithEvents cbMealTime As ComboBox
     Friend WithEvents txtMeal As TextBox
     Friend WithEvents txtPrice As TextBox
+    Friend WithEvents txtAdmNo As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents mealSelectedDGV As DataGridView
+    Friend WithEvents Label11 As Label
 End Class
