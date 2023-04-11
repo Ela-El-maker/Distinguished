@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class StudentMealSelection
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,15 @@ Partial Class StudentMealSelection
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtAdmNo = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.dateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.cbMealTime = New System.Windows.Forms.ComboBox()
         Me.txtMeal = New System.Windows.Forms.TextBox()
@@ -40,14 +42,9 @@ Partial Class StudentMealSelection
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.mealsDGV = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtAdmNo = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.mealSelectedDGV = New System.Windows.Forms.DataGridView()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.mealsDGV, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.mealSelectedDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LinkLabel1
@@ -109,6 +106,22 @@ Partial Class StudentMealSelection
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(347, 322)
         Me.Panel1.TabIndex = 11
+        '
+        'txtAdmNo
+        '
+        Me.txtAdmNo.Location = New System.Drawing.Point(143, 17)
+        Me.txtAdmNo.Name = "txtAdmNo"
+        Me.txtAdmNo.Size = New System.Drawing.Size(184, 30)
+        Me.txtAdmNo.TabIndex = 25
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(15, 19)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(100, 25)
+        Me.Label10.TabIndex = 24
+        Me.Label10.Text = "AdmNo.: "
         '
         'dateTimePicker
         '
@@ -211,7 +224,7 @@ Partial Class StudentMealSelection
         Me.mealsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.mealsDGV.Location = New System.Drawing.Point(378, 111)
         Me.mealsDGV.Name = "mealsDGV"
-        Me.mealsDGV.Size = New System.Drawing.Size(446, 128)
+        Me.mealsDGV.Size = New System.Drawing.Size(446, 142)
         Me.mealsDGV.TabIndex = 36
         '
         'Label9
@@ -225,48 +238,11 @@ Partial Class StudentMealSelection
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Meals Available"
         '
-        'txtAdmNo
-        '
-        Me.txtAdmNo.Location = New System.Drawing.Point(143, 17)
-        Me.txtAdmNo.Name = "txtAdmNo"
-        Me.txtAdmNo.Size = New System.Drawing.Size(184, 30)
-        Me.txtAdmNo.TabIndex = 25
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(15, 19)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(100, 25)
-        Me.Label10.TabIndex = 24
-        Me.Label10.Text = "AdmNo.: "
-        '
-        'mealSelectedDGV
-        '
-        Me.mealSelectedDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.mealSelectedDGV.Location = New System.Drawing.Point(378, 266)
-        Me.mealSelectedDGV.Name = "mealSelectedDGV"
-        Me.mealSelectedDGV.Size = New System.Drawing.Size(446, 139)
-        Me.mealSelectedDGV.TabIndex = 37
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label11.Font = New System.Drawing.Font("Cascadia Code SemiBold", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(519, 238)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(166, 25)
-        Me.Label11.TabIndex = 38
-        Me.Label11.Text = "Meals Selected"
-        '
         'StudentMealSelection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(836, 417)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.mealSelectedDGV)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.mealsDGV)
         Me.Controls.Add(Me.Panel2)
@@ -281,7 +257,6 @@ Partial Class StudentMealSelection
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.mealsDGV, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.mealSelectedDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -307,6 +282,4 @@ Partial Class StudentMealSelection
     Friend WithEvents txtPrice As TextBox
     Friend WithEvents txtAdmNo As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents mealSelectedDGV As DataGridView
-    Friend WithEvents Label11 As Label
 End Class

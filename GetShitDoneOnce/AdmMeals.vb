@@ -34,21 +34,21 @@ Public Class AdmMeals
         End If
     End Function
     ' Update the balance of a student
-    Private Sub UpdateStudentBalance(studentId As Integer, balance As Decimal)
-        Dim query As String = "UPDATE StudentTBL SET Account = @Account WHERE Id = @Id"
+    ' Private Sub UpdateStudentBalance(studentId As Integer, balance As Decimal)
+    'Dim query As String = "UPDATE StudentTBL SET Account = @Account WHERE Id = @Id"
 
-        Dim conn As New SqlConnection(Connection)
-        Dim cmd As New SqlCommand(query, conn)
+    'Dim conn As New SqlConnection(Connection)
+    'Dim cmd As New SqlCommand(query, conn)
 
-        cmd.Parameters.Add("@Account", SqlDbType.Decimal).Value = balance
-        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = studentId
+    '   cmd.Parameters.Add("@Account", SqlDbType.Decimal).Value = balance
+    '  cmd.Parameters.Add("@Id", SqlDbType.Int).Value = studentId
 
-        conn.Open()
+    ' conn.Open()
 
-        cmd.ExecuteNonQuery()
+    'cmd.ExecuteNonQuery()
 
-        conn.Close()
-    End Sub
+    'conn.Close()
+    'End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim Obj As New AdminLogin()
@@ -120,35 +120,19 @@ Public Class AdmMeals
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         ' Check if any textbox is empty
         If String.IsNullOrEmpty(txtMeal.Text) OrElse String.IsNullOrEmpty(cbMealTime.Text) _
-        OrElse String.IsNullOrEmpty(txtPrice.Text) Then
+    OrElse String.IsNullOrEmpty(txtPrice.Text) Then
             MessageBox.Show("Please fill in all fields.")
             Return
         End If
 
-        'Get the values from the textboxes
         'Get the values from the textboxes
         Dim mealDate As DateTime = dateTimePicker.Value
         Dim mealMeal As String = txtMeal.Text
         Dim mealPrice As Decimal = Decimal.Parse(txtPrice.Text)
         Dim mealMealTime As String = cbMealTime.Text
 
-        ' Get the selected student account balance
-        ' Dim selectedStudentId As Integer = Integer.Parse("@Id".SelectedValue)
-        'Dim selectedStudentBalance As Decimal = GetStudentBalance(selectedStudentId)
-
-
-        ' Check if the student has enough balance to purchase the meal
-        ' If selectedStudentBalance < mealPrice Then
-        MessageBox.Show("Selected student does not have enough balance to purchase this meal.")
-        '    Return
-        'End If
-
-        ' Deduct the meal price from the student's account balance
-        ' Dim updatedStudentBalance As Decimal = selectedStudentBalance - mealPrice
-        'UpdateStudentBalance(selectedStudentId, updatedStudentBalance)
-
         'Create a SQL query to insert the values into the database
-        Dim query As String = "INSERT INTO MealTBL (Date, MealTime, Meal, Price,Id) VALUES (@Date, @MealTime, @Meal, @Price,@Id)"
+        Dim query As String = "INSERT INTO MealTBL (Date, MealTime, Meal, Price) VALUES (@Date, @MealTime, @Meal, @Price)"
 
         Dim conn As New SqlConnection(Connection)
         Dim cmd As New SqlCommand(query, conn)
@@ -158,7 +142,6 @@ Public Class AdmMeals
         cmd.Parameters.Add("@MealTime", SqlDbType.NVarChar).Value = mealMealTime
         cmd.Parameters.Add("@Meal", SqlDbType.NVarChar).Value = mealMeal
         cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = mealPrice
-        ' cmd.Parameters.Add("@AdmNo", SqlDbType.Int).Value = selectedStudentId
 
         ' Open the database connection
         conn.Open()
@@ -167,15 +150,17 @@ Public Class AdmMeals
         cmd.ExecuteNonQuery()
 
         ' Close the database connection
-        Conn.Close()
+        conn.Close()
 
         ' Reload the data in the DataGridView control to show the new record
         LoadData()
         MessageBox.Show("Meal added successfully.")
+
         ' Clear the text boxes
         txtPrice.Clear()
         txtMeal.Clear()
     End Sub
+
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If mealsDGV.SelectedRows.Count > 0 Then

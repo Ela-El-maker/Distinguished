@@ -27,14 +27,40 @@ Public Class StudentMealSelection
         adapter.Fill(table)
         mealsDGV.DataSource = table
     End Sub
-    Private Sub LoadMealSelectedData()
-        Dim query As String = "SELECT Date,AdmNo, Name, MealTime, Meal, Price, Account FROM StudentSelectionTBL"
+    Private Sub LoadSelectedMealData()
         Dim Conn As New SqlConnection(Connection)
-        Dim adapter As New SqlDataAdapter(query, Conn)
+        Dim query As String = "SELECT Date,AdmNo, Name, MealTime, Meal, Price, Account FROM StudentSelectionTBL"
+
+        Dim cmd As New SqlCommand(query, Conn)
+        cmd.Parameters.AddWithValue("@AdmNo", txtAdmNo.Text)
+        cmd.Parameters.AddWithValue("@Date", DateTime.Now.ToShortDateString())
+        Dim adapter As New SqlDataAdapter(cmd)
         Dim table As New DataTable()
         adapter.Fill(table)
         mealsDGV.DataSource = table
     End Sub
+    Private Sub LoadMealSelectedData()
+        Using Conn As New SqlConnection(Connection)
+            Conn.Open()
+
+            ' Create a SQL command to select data from the StudentSelectionTBL table
+            Dim sql As String = "SELECT Date, AdmNo, MealTime, Meal, Price FROM StudentSelectionTBL"
+            Dim cmd As New SqlCommand(sql, Conn)
+
+            ' Execute the command and get the data
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+
+            ' Load the data into the historyDGV DataGridView control
+            Dim dt As New DataTable()
+            dt.Load(reader)
+            mealsDGV.DataSource = dt
+
+            reader.Close()
+        End Using
+    End Sub
+
+
+
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim Obj As New Login()
         Obj.Show()
@@ -74,100 +100,118 @@ Public Class StudentMealSelection
 
     Private Sub StudentMealSelection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
-        Populate()
-    End Sub
-    Private Sub Populate()
-        Dim conn As New SqlConnection(Connection)
-        Dim dateSelected As Date = DateTime.Now.ToShortDateString()
-        Dim studentAdm As String = txtAdmNo.Text
-        Dim sql As String = "SELECT s.Name, s.Account, m.Meal, m.MealTime, m.Price FROM StudentTBL s, MealTBL m WHERE s.AdmNo = '" & studentAdm & "' AND m.Date='" & dateSelected & "'"
-        Dim da As New SqlDataAdapter(sql, conn)
-        Dim dt As New DataTable()
-        da.Fill(dt)
-        mealSelectedDGV.DataSource = dt
 
     End Sub
+
 
     Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
         ' Check if any textbox is empty
         If String.IsNullOrEmpty(txtMeal.Text) OrElse String.IsNullOrEmpty(cbMealTime.Text) _
-        OrElse String.IsNullOrEmpty(txtPrice.Text) Then
+    OrElse String.IsNullOrEmpty(txtPrice.Text) Then
             MessageBox.Show("Please fill in all fields.")
             Return
         End If
-        Dim Conn As New SqlConnection(Connection) ' Create a new SqlConnection object using the connection string
 
-        Dim dateSelected As String = DateTime.Now.ToShortDateString()
         Dim studentAdm As Integer = txtAdmNo.Text
-        'Create a SQL statement to select data from the StudentTBL and MealTBL tables
-        ' Dim sql As String = "SELECT s.Name, s.Account, m.Meal, m.MealTime, m.Price
-        'From StudentTBL s, MealTBL m
-        'Where s.AdmNo = @AdmNo And m.Date = @Date"
-        Dim sql As String = "SELECT s.Name, s.Account, m.Meal, m.MealTime, m.Price FROM StudentTBL s, MealTBL m WHERE s.AdmNo = '" & studentAdm & "' AND m.Date='" & dateSelected & "'"
+        Dim dateSelected As DateTime = DateTime.Today
 
-        Populate()
+        Using Conn As New SqlConnection(Connection)
+            Conn.Open()
+            ' Check if the meal exists in the MealTBL table
+            Dim mealId As Integer = 0
+            Dim sqlMealId As String = "SELECT Id FROM MealTBL WHERE Meal = @Meal AND MealTime = @MealTime AND Date = @Date"
+            Dim cmdMealId As New SqlCommand(sqlMealId, Conn)
+            cmdMealId.Parameters.AddWithValue("@Meal", txtMeal.Text)
+            cmdMealId.Parameters.AddWithValue("@MealTime", cbMealTime.Text)
+            cmdMealId.Parameters.AddWithValue("@Date", dateSelected)
+            Dim readerMealId As SqlDataReader = cmdMealId.ExecuteReader()
+            If readerMealId.HasRows Then
+                readerMealId.Read()
+                mealId = readerMealId.GetInt32(0)
+                readerMealId.Close()
+            Else
+                readerMealId.Close()
+                MessageBox.Show("Invalid meal selection.")
+                Return
+            End If
+            ' Create a SQL command to select data from the StudentTBL table
+            Dim sqlStudent As String = "SELECT Name, Account FROM StudentTBL WHERE AdmNo = @AdmNo"
+            Dim cmdStudent As New SqlCommand(sqlStudent, Conn)
+            cmdStudent.Parameters.AddWithValue("@AdmNo", studentAdm)
 
-        'Create a command object with the SQL statement and parameters
+            ' Execute the command and get the data
+            Dim readerStudent As SqlDataReader = cmdStudent.ExecuteReader()
 
-        Dim cmd As New SqlCommand(Sql, Conn)
-        cmd.Parameters.AddWithValue("@AdmNo", txtAdmNo.Text) 'replace with the actual admission number
-        cmd.Parameters.AddWithValue("@Date", dateSelected) 'replace with the actual date
+            ' Check if the student exists
+            If Not readerStudent.HasRows Then
+                readerStudent.Close()
+                MessageBox.Show("Invalid admission number.")
+                Return
+            End If
 
+            ' Get the student details
+            readerStudent.Read()
+            Dim name As String = readerStudent("Name").ToString()
+            Dim accountBalance As Decimal = Decimal.Parse(readerStudent("Account").ToString())
+            readerStudent.Close()
 
-        Conn.Open() 'Open database connection 
-        'Dim mealTime As String = cbMealTime.Text
-        'Dim mealSelected As String = txtMeal.Text
-        'Dim mealPrice As Double = CDbl(txtPrice.Text)
-        ' Execute the command and get the data
-        Dim reader As SqlDataReader = cmd.ExecuteReader()
+            ' Get the meal details from the form controls
+            Dim meal As String = txtMeal.Text
+            Dim mealTime As String = cbMealTime.Text
+            Dim price As Decimal = Decimal.Parse(txtPrice.Text)
 
+            ' Check if the student has sufficient balance
+            If accountBalance < price Then
+                MessageBox.Show("Insufficient account balance.")
+                Return
+            End If
+            ' Create a SQL command to select the account balance from the StudentTBL table
+            Dim sqlAccount As String = "SELECT Account FROM StudentTBL WHERE AdmNo = @AdmNo"
+            Dim cmdAccount As New SqlCommand(sqlAccount, Conn)
+            cmdAccount.Parameters.AddWithValue("@AdmNo", studentAdm)
 
-        ' Loop through the results and insert them into the studentselectionTBL table
-        While reader.Read()
+            ' Execute the command and get the account balance
+            Dim accountReader As SqlDataReader = cmdAccount.ExecuteReader()
+            Dim LabeLaccountBalance As Decimal = 0
 
-            Dim mealTime As String = reader("MealTime").ToString()
-            Dim meal As String = reader("Meal").ToString()
-            Dim price As Decimal = Decimal.Parse(reader("Price").ToString())
-            Dim name As String = reader("Name").ToString()
-            Dim accountBalance As Decimal = Decimal.Parse(reader("Account").ToString())
+            If accountReader.HasRows Then
+                accountReader.Read()
+                LabeLaccountBalance = Decimal.Parse(accountReader("Account").ToString())
+            End If
 
-            'Create a SQL statement to insert the data into the StudentSelectionTBL table
-            ' Dim insertSql As String = "INSERT INTO StudentSelectionTBL (Date,AdmNo, Name, MealTime, Meal, Price, Account) " &
-            '                  "VALUES (@Date,@AdmNo, @Name, @MealTime, @Meal, @Price, @Account)"
+            accountReader.Close()
 
-            'Create a command object with the insert SQL statement and parameters
-            Dim insertCmd As New SqlCommand("INSERT INTO StudentSelectionTBL (Date, AdmNo, Name, MealTime, Meal, Price, Account) VALUES (@Date, @AdmNo, @Name, @MealTime, @Meal, @Price, @Account)", Conn)
+            ' Display the account balance to the user
+            Label7.Text = "Account Balance: " & accountBalance.ToString("c")
 
-            ' Set the parameter values for the insert command
-            insertCmd.Parameters.AddWithValue("@Date", dateSelected)
-            insertCmd.Parameters.AddWithValue("@AdmNo", studentAdm)
-            insertCmd.Parameters.AddWithValue("@Name", name) ' Replace studentName with the actual student name
-            insertCmd.Parameters.AddWithValue("@MealTime", mealTime)
-            insertCmd.Parameters.AddWithValue("@Meal", meal)
-            insertCmd.Parameters.AddWithValue("@Price", price)
-            insertCmd.Parameters.AddWithValue("@Account", accountBalance) ' Replace accountBalance with the actual account balance
-
-
+            ' Create a SQL command to insert the data into the StudentSelectionTBL table
+            Dim sqlInsert As String = "INSERT INTO StudentSelectionTBL (Date, AdmNo, MealId, Name, Account) VALUES (@Date, @AdmNo, @MealId, @Name, @Account)"
+            Dim cmdInsert As New SqlCommand(sqlInsert, Conn)
+            cmdInsert.Parameters.AddWithValue("@Date", dateSelected)
+            cmdInsert.Parameters.AddWithValue("@AdmNo", studentAdm)
+            cmdInsert.Parameters.AddWithValue("@MealId", mealId)
+            cmdInsert.Parameters.AddWithValue("@Name", name)
+            cmdInsert.Parameters.AddWithValue("@Account", accountBalance - price)
 
             ' Execute the insert command
-            insertCmd.ExecuteNonQuery()
-        End While
+            cmdInsert.ExecuteNonQuery()
 
-        ' Close the reader and the connection
-        reader.Close()
-        Conn.Close()
+            ' Display a message to the user
+            MessageBox.Show("Meal added to StudentSelectionTBL.")
 
+            ' Reload the data in the historyDGV
+            LoadMealSelectedData()
 
-
-        MessageBox.Show("Enjoy your meal.")
-
-        ' Reload the data in the historyDGV
-        LoadMealSelectedData()
-        MessageBox.Show("Meal Selected successfully.")
-        ' Clear the text boxes
+            ' Clear the form controls
+            txtAdmNo.Clear()
+            txtMeal.Clear()
+            cbMealTime.SelectedIndex = -1
+            txtPrice.Clear()
+        End Using
     End Sub
 
-    Private Sub mealSelectedDGV_SelectionChanged(sender As Object, e As EventArgs) Handles mealSelectedDGV.SelectionChanged
 
-    End Sub
+
+
+
 End Class
