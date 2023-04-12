@@ -21,7 +21,7 @@ Public Class StudentAccountInfo
         Dim table As New DataTable()
         Using Conn As New SqlConnection(Connection)
             Conn.Open()
-            Dim cmd As New SqlCommand("SELECT * FROM StudentSelectionTBL", Conn)
+            Dim cmd As New SqlCommand("SELECT * FROM SelectedTBL", Conn)
             Dim adapter As New SqlDataAdapter()
             adapter.SelectCommand = cmd
             adapter.Fill(table)
@@ -56,12 +56,15 @@ Public Class StudentAccountInfo
 
     Private Sub StudentAccountInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadMealSelectedData()
+        'Populate the historyDGV with the selected meals data for the currently selected student
+        ' Call OutputInDGV with the initial values
+        OutputInDGV(txtAdmNo.Text)
         Dim username As String = Login.txtAdmNo.Text
         lblWelcome.Text = "Welcome, " + username + "!"
 
         ' Retrieve name from the database using admNo
         Dim name As String = txtName.Text
-        Dim admNo As String = txtAdm.Text
+        Dim admNo As String = txtAdmNo.Text
 
         Dim Conn As New SqlConnection(Connection) ' Create a new SqlConnection object using the connection string
         Conn.Open()
@@ -87,29 +90,90 @@ Public Class StudentAccountInfo
             End If
         Next
     End Sub
-
-    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-
-    End Sub
-
     Private Sub historyDGV_SelectionChanged(sender As Object, e As EventArgs) Handles historyDGV.SelectionChanged
         If historyDGV.SelectedRows.Count > 0 Then
             Dim selectedRow As DataGridViewRow = historyDGV.SelectedRows(0)
 
             'Display the values in the textboxes
-            txtAdm.Text = selectedRow.Cells("AdmNo").Value.ToString()
+            txtAdmNo.Text = selectedRow.Cells("AdmNo").Value.ToString()
             txtName.Text = selectedRow.Cells("Name").Value.ToString()
             cbMealTime.Text = selectedRow.Cells("MealTime").Value.ToString()
             txtMeal.Text = selectedRow.Cells("Meal").Value.ToString()
 
-            'Populate StudentSelectionTBL DGV
-            Dim query As String = "SELECT * FROM StudentSelectionTBL WHERE AdmNo = '" & txtAdm.Text & "' "
-            Dim conn As New SqlConnection(Connection)
-            Dim adapter As New SqlDataAdapter(query, conn)
-            Dim table As New DataTable()
-            adapter.Fill(table)
-            historyDGV.DataSource = table
+            'Populate historyDGV with selected student's meal history
+            OutputInDGV(txtAdmNo.Text)
         End If
     End Sub
 
+    Private Sub OutputInDGV(admNo As String)
+        Using conn As New SqlConnection(Connection)
+            conn.Open()
+
+            Dim sql As String = "SELECT Name, AdmNo, MealTime, Meal FROM SelectedTBL WHERE AdmNo = @AdmNo"
+            Dim cmd As New SqlCommand(sql, conn)
+            cmd.Parameters.AddWithValue("@AdmNo", admNo)
+
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+
+            If reader.Read() Then
+                txtName.Text = reader("Name").ToString()
+                txtAdmNo.Text = reader("AdmNo").ToString()
+                cbMealTime.Text = reader("MealTime").ToString()
+                txtMeal.Text = reader("Meal").ToString()
+            Else
+                MessageBox.Show("Done!!!")
+            End If
+
+            reader.Close()
+        End Using
+    End Sub
+
+
+
+
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        ' Create a new PrintDocument object
+        Dim pd As New Printing.PrintDocument()
+
+        ' Set the document name (optional)
+        pd.DocumentName = "Student Info"
+
+        ' Add an event handler for the PrintPage event
+        AddHandler pd.PrintPage, AddressOf PrintPageHandler
+
+        ' Print the document
+        pd.Print()
+    End Sub
+    Private Sub PrintPageHandler(sender As Object, e As Printing.PrintPageEventArgs)
+        ' Set the font and color for the text
+        Dim font As New Font("Arial", 16)
+        Dim brush As New SolidBrush(Color.Black)
+
+        ' Get the values from the textboxes
+        Dim name As String = txtName.Text
+        Dim admNo As String = txtAdmNo.Text
+        Dim mealTime As String = cbMealTime.Text
+        Dim meal As String = txtMeal.Text
+
+        ' Create the text to be printed
+        Dim text As String = "Name: " + name + vbCrLf + "Adm No: " + admNo + vbCrLf + "Meal Time: " + mealTime + vbCrLf + "Meal: " + meal
+
+        ' Calculate the size of the text
+        Dim textSize As SizeF = e.Graphics.MeasureString(text, font)
+
+        ' Calculate the position for the text
+        Dim x As Single = e.MarginBounds.Left
+        Dim y As Single = e.MarginBounds.Top
+
+        ' Print the text
+        e.Graphics.DrawString(text, font, brush, x, y)
+
+        ' Clean up
+        font.Dispose()
+        brush.Dispose()
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+
+    End Sub
 End Class

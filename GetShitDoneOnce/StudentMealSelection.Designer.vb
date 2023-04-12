@@ -35,7 +35,6 @@ Partial Class StudentMealSelection
         Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.btnSelect = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -98,7 +97,6 @@ Partial Class StudentMealSelection
         Me.Panel1.Controls.Add(Me.txtPrice)
         Me.Panel1.Controls.Add(Me.btnSelect)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -155,7 +153,7 @@ Partial Class StudentMealSelection
         '
         'btnSelect
         '
-        Me.btnSelect.Location = New System.Drawing.Point(153, 228)
+        Me.btnSelect.Location = New System.Drawing.Point(153, 274)
         Me.btnSelect.Name = "btnSelect"
         Me.btnSelect.Size = New System.Drawing.Size(157, 36)
         Me.btnSelect.TabIndex = 17
@@ -170,15 +168,6 @@ Partial Class StudentMealSelection
         Me.Label8.Size = New System.Drawing.Size(78, 25)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "Meal :"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 287)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(199, 25)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "Account Balance :"
         '
         'Label6
         '
@@ -224,7 +213,7 @@ Partial Class StudentMealSelection
         Me.mealsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.mealsDGV.Location = New System.Drawing.Point(378, 111)
         Me.mealsDGV.Name = "mealsDGV"
-        Me.mealsDGV.Size = New System.Drawing.Size(446, 142)
+        Me.mealsDGV.Size = New System.Drawing.Size(446, 282)
         Me.mealsDGV.TabIndex = 36
         '
         'Label9
@@ -269,7 +258,6 @@ Partial Class StudentMealSelection
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnSelect As Button
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label

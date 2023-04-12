@@ -25,13 +25,11 @@ Partial Class StudentAccountInfo
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cbMealTime = New System.Windows.Forms.ComboBox()
         Me.txtMeal = New System.Windows.Forms.TextBox()
-        Me.txtStatus = New System.Windows.Forms.TextBox()
-        Me.txtAdm = New System.Windows.Forms.TextBox()
+        Me.txtAdmNo = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.btnGenerate = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -42,6 +40,7 @@ Partial Class StudentAccountInfo
         Me.lblWelcome = New System.Windows.Forms.Label()
         Me.historyDGV = New System.Windows.Forms.DataGridView()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.historyDGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,13 +51,11 @@ Partial Class StudentAccountInfo
         Me.Panel1.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.Panel1.Controls.Add(Me.cbMealTime)
         Me.Panel1.Controls.Add(Me.txtMeal)
-        Me.Panel1.Controls.Add(Me.txtStatus)
-        Me.Panel1.Controls.Add(Me.txtAdm)
+        Me.Panel1.Controls.Add(Me.txtAdmNo)
         Me.Panel1.Controls.Add(Me.txtName)
         Me.Panel1.Controls.Add(Me.btnGenerate)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Location = New System.Drawing.Point(11, 95)
@@ -69,31 +66,24 @@ Partial Class StudentAccountInfo
         'cbMealTime
         '
         Me.cbMealTime.FormattingEnabled = True
-        Me.cbMealTime.Location = New System.Drawing.Point(140, 149)
+        Me.cbMealTime.Location = New System.Drawing.Point(130, 106)
         Me.cbMealTime.Name = "cbMealTime"
-        Me.cbMealTime.Size = New System.Drawing.Size(227, 33)
+        Me.cbMealTime.Size = New System.Drawing.Size(237, 33)
         Me.cbMealTime.TabIndex = 3
         '
         'txtMeal
         '
-        Me.txtMeal.Location = New System.Drawing.Point(130, 192)
+        Me.txtMeal.Location = New System.Drawing.Point(130, 170)
         Me.txtMeal.Name = "txtMeal"
         Me.txtMeal.Size = New System.Drawing.Size(237, 30)
         Me.txtMeal.TabIndex = 4
         '
-        'txtStatus
+        'txtAdmNo
         '
-        Me.txtStatus.Location = New System.Drawing.Point(130, 109)
-        Me.txtStatus.Name = "txtStatus"
-        Me.txtStatus.Size = New System.Drawing.Size(237, 30)
-        Me.txtStatus.TabIndex = 2
-        '
-        'txtAdm
-        '
-        Me.txtAdm.Location = New System.Drawing.Point(130, 62)
-        Me.txtAdm.Name = "txtAdm"
-        Me.txtAdm.Size = New System.Drawing.Size(237, 30)
-        Me.txtAdm.TabIndex = 1
+        Me.txtAdmNo.Location = New System.Drawing.Point(130, 62)
+        Me.txtAdmNo.Name = "txtAdmNo"
+        Me.txtAdmNo.Size = New System.Drawing.Size(237, 30)
+        Me.txtAdmNo.TabIndex = 1
         '
         'txtName
         '
@@ -105,7 +95,7 @@ Partial Class StudentAccountInfo
         '
         'btnGenerate
         '
-        Me.btnGenerate.Location = New System.Drawing.Point(118, 243)
+        Me.btnGenerate.Location = New System.Drawing.Point(157, 234)
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(172, 41)
         Me.btnGenerate.TabIndex = 5
@@ -115,7 +105,7 @@ Partial Class StudentAccountInfo
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(12, 187)
+        Me.Label10.Location = New System.Drawing.Point(12, 175)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(78, 25)
         Me.Label10.TabIndex = 8
@@ -124,20 +114,11 @@ Partial Class StudentAccountInfo
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 144)
+        Me.Label9.Location = New System.Drawing.Point(2, 114)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(122, 25)
         Me.Label9.TabIndex = 7
         Me.Label9.Text = "Mealtime :"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 104)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(100, 25)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "Status :"
         '
         'Label5
         '
@@ -238,6 +219,9 @@ Partial Class StudentAccountInfo
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "History"
         '
+        'PrintDocument1
+        '
+        '
         'StudentAccountInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 25.0!)
@@ -270,7 +254,6 @@ Partial Class StudentAccountInfo
     Friend WithEvents btnGenerate As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel2 As Panel
@@ -278,8 +261,8 @@ Partial Class StudentAccountInfo
     Friend WithEvents Label6 As Label
     Friend WithEvents cbMealTime As ComboBox
     Friend WithEvents txtMeal As TextBox
-    Friend WithEvents txtStatus As TextBox
-    Friend WithEvents txtAdm As TextBox
+    Friend WithEvents txtAdmNo As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents lblWelcome As Label
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class

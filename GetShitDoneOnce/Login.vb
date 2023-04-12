@@ -35,7 +35,7 @@ Public Class Login
         ' Authenticate the user
         If result = 1 Then
             ' The user is authenticated, show the main form
-            Dim mainForm As New StudentMealSelection()
+            Dim mainForm As New StudentAccountInfo()
             mainForm.Show()
             MessageBox.Show("Welcome " & username & "!")
             Me.Hide()

@@ -28,14 +28,13 @@ Partial Class StudentPayment
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtNewBalance = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblUpdatedBalance = New System.Windows.Forms.Label()
         Me.txtContact = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtAmount = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -92,12 +91,11 @@ Partial Class StudentPayment
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.Panel1.Controls.Add(Me.txtAmount)
+        Me.Panel1.Controls.Add(Me.txtNewBalance)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.lblUpdatedBalance)
         Me.Panel1.Controls.Add(Me.txtContact)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.btnEnter)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Location = New System.Drawing.Point(12, 102)
@@ -105,14 +103,30 @@ Partial Class StudentPayment
         Me.Panel1.Size = New System.Drawing.Size(809, 306)
         Me.Panel1.TabIndex = 6
         '
-        'Label6
+        'txtNewBalance
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(250, 243)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(67, 25)
-        Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Total"
+        Me.txtNewBalance.Location = New System.Drawing.Point(294, 121)
+        Me.txtNewBalance.Name = "txtNewBalance"
+        Me.txtNewBalance.Size = New System.Drawing.Size(242, 30)
+        Me.txtNewBalance.TabIndex = 15
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(34, 121)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(100, 25)
+        Me.Label8.TabIndex = 14
+        Me.Label8.Text = "Amount :"
+        '
+        'lblUpdatedBalance
+        '
+        Me.lblUpdatedBalance.AutoSize = True
+        Me.lblUpdatedBalance.Location = New System.Drawing.Point(67, 257)
+        Me.lblUpdatedBalance.Name = "lblUpdatedBalance"
+        Me.lblUpdatedBalance.Size = New System.Drawing.Size(67, 25)
+        Me.lblUpdatedBalance.TabIndex = 13
+        Me.lblUpdatedBalance.Text = "Total"
         '
         'txtContact
         '
@@ -129,15 +143,6 @@ Partial Class StudentPayment
         Me.Label5.Size = New System.Drawing.Size(243, 25)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Input Phone Number : "
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(34, 243)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(210, 25)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Account Ballance :"
         '
         'Label7
         '
@@ -159,22 +164,6 @@ Partial Class StudentPayment
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(812, 56)
         Me.Panel2.TabIndex = 36
-        '
-        'txtAmount
-        '
-        Me.txtAmount.Location = New System.Drawing.Point(294, 121)
-        Me.txtAmount.Name = "txtAmount"
-        Me.txtAmount.Size = New System.Drawing.Size(242, 30)
-        Me.txtAmount.TabIndex = 15
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(34, 121)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(100, 25)
-        Me.Label8.TabIndex = 14
-        Me.Label8.Text = "Amount :"
         '
         'StudentPayment
         '
@@ -203,12 +192,11 @@ Partial Class StudentPayment
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblUpdatedBalance As Label
     Friend WithEvents txtContact As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtAmount As TextBox
+    Friend WithEvents txtNewBalance As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel2 As Panel
 End Class
